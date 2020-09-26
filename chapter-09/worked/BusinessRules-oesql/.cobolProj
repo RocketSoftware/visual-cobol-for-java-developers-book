@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cobolProject" name="BusinessRules-oesql" uuid="097fff6f-a253-4621-8d84-4e824e4d0574" version="5.0">
+   <settings xsi:type="projectSettingsContainer">
+      <build-precedence-paths xsi:type="buildPrecedenceSettings">
+         <path enabled="true" name="/BusinessRules-oesql/src" type="mfpath"/>
+      </build-precedence-paths>
+      <dependent-projects xsi:type="dependentProjectsSettings"/>
+      <copybook-paths xsi:type="copybookPathsSettings">
+         <path enabled="true" name="/BusinessRules-oesql" type="mfpath"/>
+         <path enabled="true" name="/BusinessRules-oesql/src" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules-oesql/.externalToolBuilders" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules-oesql/dist" type="mfpath"/>
+      </copybook-paths>
+      <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
+         <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
+            <targetdir name=".bin"/>
+         </configuration>
+      </configurations>
+      <extra-resource-files xsi:type="extraResourceFilesSettings"/>
+   </settings>
+   <files xsi:type="projectFileStore">
+      <filetype type="cobol" xsi:type="cobolFileContainer">
+         <file compile="true" path="src/AccountStorageAccess.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/Calendar.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/InterestCalculator.cbl" xsi:type="cobolFile"/>
+      </filetype>
+      <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
+      <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="lib" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
+      </folders>
+   </files>
+</project>

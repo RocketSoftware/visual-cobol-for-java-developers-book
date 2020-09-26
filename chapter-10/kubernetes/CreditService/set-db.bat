@@ -1,0 +1,4 @@
+set POSTGRES_DB=application-db
+set POSTGRES_HOST=localhost
+set POSTGRES_PASSWORD=LakeOrangeGarden
+set POSTGRES_USER=postgres

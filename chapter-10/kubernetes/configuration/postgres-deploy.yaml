@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres-database
+  name: postgres-database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-database
+  template:
+    metadata:
+      labels:
+        app: postgres-database
+    spec:
+      containers:
+      - image: postgres:12.3
+        name: postgres
+        ports: 
+        - containerPort: 5432 
+        env:
+        - name: POSTGRES_DB
+          valueFrom: 
+             configMapKeyRef: 
+                name: cs-connection-strings
+                key: db-name
+        - name: POSTGRES_USER
+          valueFrom: 
+             configMapKeyRef: 
+                name: cs-connection-strings
+                key: user
+        - name: POSTGRES_PASSWORD
+          valueFrom: 
+             secretKeyRef: 
+               name: pg-db-secrets
+               key: password
+
+          
+
+          
+ 

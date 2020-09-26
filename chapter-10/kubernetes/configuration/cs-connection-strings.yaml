@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cs-connection-strings
+data:
+  host: "postgres-database"
+  db-name: "application-db"
+  user: "postgres"
+  password: "LakeOrangeGarden"

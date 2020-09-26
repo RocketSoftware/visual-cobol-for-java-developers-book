@@ -1,0 +1,40 @@
+{
+    "version": "2.0",
+    "routeKey": "ANY /hello-gateway",
+    "rawPath": "/default/hello-gateway",
+    "rawQueryString": "",
+    "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "cache-control": "no-cache",
+        "content-length": "831",
+        "content-type": "application/json",
+        "host": "f23akrkza1.execute-api.us-west-2.amazonaws.com",
+        "postman-token": "441eba13-e3e1-41da-b653-da7c4e12d1e5",
+        "user-agent": "PostmanRuntime/7.23.0",
+        "x-amzn-trace-id": "Root=1-5f01a204-86c5010661efa0cee6dd6da0",
+        "x-forwarded-for": "89.238.154.119",
+        "x-forwarded-port": "443",
+        "x-forwarded-proto": "https"
+    },
+    "requestContext": {
+        "accountId": "130669021727",
+        "apiId": "f23akrkza1",
+        "domainName": "f23akrkza1.execute-api.us-west-2.amazonaws.com",
+        "domainPrefix": "f23akrkza1",
+        "http": {
+            "method": "POST",
+            "path": "/default/hello-gateway",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "89.238.154.119",
+            "userAgent": "PostmanRuntime/7.23.0"
+        },
+        "requestId": "PMZAuhcSPHcEJBQ=",
+        "routeKey": "ANY /hello-gateway",
+        "stage": "default",
+        "time": "05/Jul/2020:09:48:52 +0000",
+        "timeEpoch": 1593942532567
+    },
+    "body": "{\r\n  \"dayRate\": 0.0002739726,\r\n  \"startingAmount\": 100,\r\n  \"startDate\": {\r\n    \"year\": 2019,\r\n    \"month\": 7,\r\n    \"day\": 1\r\n  },\r\n  \"transactions\": [\r\n    [\r\n      \"256\",\r\n      \"20\",\r\n      \"20190703\",\r\n      \"62.70000\",\r\n      \"Books\"\r\n    ],\r\n    [\r\n      \"257\",\r\n      \"20\",\r\n      \"20190708\",\r\n      \"7.430000\",\r\n      \"Jewelery\"\r\n    ],\r\n    [\r\n      \"258\",\r\n      \"20\",\r\n      \"20190714\",\r\n      \"20.80000\",\r\n      \"Automotive\"\r\n    ],\r\n    [\r\n      \"259\",\r\n      \"20\",\r\n      \"20190717\",\r\n      \"7.970000\",\r\n      \"Games\"\r\n    ],\r\n    [\r\n      \"260\",\r\n      \"20\",\r\n      \"20190717\",\r\n      \"64.27000\",\r\n      \"Baby\"\r\n    ],\r\n    [\r\n      \"261\",\r\n      \"20\",\r\n      \"20190726\",\r\n      \"85.90000\",\r\n      \"Shoes\"\r\n    ],\r\n    [\r\n      \"262\",\r\n      \"20\",\r\n      \"20190731\",\r\n      \"94.97000\",\r\n      \"Grocery\"\r\n    ]\r\n  ]\r\n}",
+    "isBase64Encoded": false
+}

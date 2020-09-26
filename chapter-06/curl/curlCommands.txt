@@ -1,0 +1,15 @@
+GET
+
+curl http://localhost:8080/service/account/1001
+
+POST
+
+curl -d @newAccount.json -H "Content-Type: application/json" -X POST http://localhost:8080/service/account/
+
+PUT
+
+curl @putAccount.json -H "Content-Type: application/json" -X PUT  http://localhost:8080/service/account/
+
+DELETE
+
+curl -X DELETE http://localhost:8080/service/account/1001

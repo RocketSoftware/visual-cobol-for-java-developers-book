@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<properties>
+		<cobolVersion>5.0.0</cobolVersion>
+	</properties>
+	<groupId>com.mfcobolbook.cobol</groupId>
+	<version>1.0.9</version>
+	<packaging>jar</packaging>
+
+	<name>BusinessRules</name>
+	<description>Business rules and data</description>
+	
+    <dependencies>
+        <dependency>
+            <groupId>com.microfocus.cobol.rts</groupId>
+            <artifactId>mfcobol</artifactId>
+			<version>${cobolVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microfocus.cobol.rts</groupId>
+            <artifactId>mfcobolrts</artifactId>
+			<version>${cobolVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microfocus.cobol.rts</groupId>
+            <artifactId>mfsqljvm</artifactId>
+            <version>${cobolVersion}</version>
+        </dependency>
+    </dependencies>
+
+	<artifactId>BusinessRules</artifactId>
+</project>

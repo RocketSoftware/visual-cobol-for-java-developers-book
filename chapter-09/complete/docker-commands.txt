@@ -1,0 +1,7 @@
+docker run -it -p 80:8080 --name credit-service --rm --env DB_CONNECTION_STRING='Driver=org.postgresql.Driver;URL=jdbc:postgresql://localhost.localdomain/application-db?user=postgres&password='$DB_TEST_PASSWORD mfcobolbook/credit-service:1.0 
+
+docker network create app-network 
+docker run --name application-postgres --network app-network -e POSTGRES_DB=application-db -e POSTGRES_PASSWORD=LakeOrangeGarden -p 5433:5432 -d postgres:12.3
+docker run -d -p 80:8080 --name credit-service --rm --network app-network -e DB_CONNECTION_STRING='Driver=org.postgresql.Driver;URL=jdbc:postgresql:application-db?user=postgres&password='$DB_TEST_PASSWORD    
+
+

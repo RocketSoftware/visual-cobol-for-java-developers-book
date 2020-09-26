@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>BusinessRules-oesql</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.microfocus.eclipse.project.cobolBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>mf.buildThreadCount</key>
+					<value>1</value>
+				</dictionary>
+				<dictionary>
+					<key>mf.settingsDir</key>
+					<value>.settings</value>
+				</dictionary>
+				<dictionary>
+					<key>mf.useDirectiveSet</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
+			<triggers>auto,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>LaunchConfigHandle</key>
+					<value>&lt;project&gt;/.externalToolBuilders/mvn_businessrules.launch</value>
+				</dictionary>
+				<dictionary>
+					<key>incclean</key>
+					<value>true</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>com.microfocus.eclipse.project.cobolNature</nature>
+		<nature>com.microfocus.eclipse.coboljvm.coboljvmNature</nature>
+	</natures>
+</projectDescription>

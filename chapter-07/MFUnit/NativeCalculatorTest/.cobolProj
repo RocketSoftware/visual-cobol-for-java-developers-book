@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cobolProject" name="NativeCalculatorTest" uuid="ae126c56-e700-4e92-b6bd-9134d8a62600" version="5.0">
+   <settings xsi:type="projectSettingsContainer">
+      <copybook-paths xsi:type="copybookPathsSettings">
+         <path enabled="true" name="/NativeCalculatorTest" type="mfpath"/>
+         <path enabled="true" name="/NativeCalculator" type="mfpath"/>
+      </copybook-paths>
+      <build-precedence-paths xsi:type="buildPrecedenceSettings">
+         <path enabled="true" name="/NativeCalculatorTest" type="mfpath"/>
+      </build-precedence-paths>
+      <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
+         <configuration description="New Configuration" type="single_dll" xsi:type="cobolBuildConfiguration">
+            <targetdir name="NativeCalculatorTest"/>
+            <link_settings xsi:type="linkSettings">
+               <options>
+                  <option id="targetName" name="linkSettings" value="NativeCalculatorTest"/>
+                  <option id="platform" name="linkSettings" value="Windows"/>
+                  <option id="threadedRts" name="linkSettings" value="threadedRts"/>
+                  <option id="applicationType" name="linkSettings" value="console"/>
+                  <option id="runtimeModel" name="linkSettings" value="shared"/>
+                  <option id="outputDirectory" name="linkSettings" value="New Configuration.bin"/>
+                  <option id="type" name="linkSettings" value="single_dll"/>
+                  <option id="bitism" name="linkSettings" value="64 bit"/>
+               </options>
+               <additional_files/>
+            </link_settings>
+         </configuration>
+      </configurations>
+      <ims_settings xsi:type="additionalImsSettings">
+         <generatedFileDir name=""/>
+         <imsDatabaseDir name=""/>
+      </ims_settings>
+      <dependent-projects xsi:type="dependentProjectsSettings">
+         <dependent-project name="NativeCalculator"/>
+      </dependent-projects>
+      <asm_link_settings xsi:type="assemblerLinkSettings">
+         <options>
+            <option id="link_residency_mode" name="mf370lnk" value="RMODE(31)"/>
+            <option id="link_linker_output" name="mf370lnk" value="OMF(390)"/>
+            <option id="link_resolve_external" name="mf370lnk" value="CALL"/>
+            <option id="link_mark_reusable" name="mf370lnk" value="REUS"/>
+            <option id="link_generate_listing" name="mf370lnk" value="NOLIST"/>
+            <option id="link_create_debug_info" name="mf370lnk" value="ANIM"/>
+            <option id="link_mark_reentrant" name="mf370lnk" value="RENT"/>
+            <option id="link_addressing_mode" name="mf370lnk" value="AMODE(31)"/>
+         </options>
+      </asm_link_settings>
+   </settings>
+   <files xsi:type="projectFileStore">
+      <filetype type="cobol" xsi:type="cobolFileContainer">
+         <file compile="true" path="MainProgramTest.cbl" xsi:type="cobolFile"/>
+      </filetype>
+      <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
+      <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="New_Configuration.bin" xsi:type="cobolFolder"/>
+      </folders>
+   </files>
+</project>

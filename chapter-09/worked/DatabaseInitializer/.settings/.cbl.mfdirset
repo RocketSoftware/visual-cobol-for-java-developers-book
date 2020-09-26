@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<x:dirset xmlns:x="http://microfocus.com/directivesset" schemaVersion="1.0">
+<x:directive handler="project.cobolSettings" id="warning" name="NOWARNING"/>
+<x:directive handler="project.cobolSettings" id="max-error" name="MAX-ERROR&quot;100&quot;"/>
+<x:directive handler="project.cobolSettings" id="jarName" name="DatabaseInitializer.jar"/>
+<x:directive handler="project.cobolSettings" id="outputDirectory" name="bin"/>
+<x:directive handler="project.cobolSettings" id="exitprogram" name="EXITPROGRAM&quot;ANSI&quot;"/>
+<x:directive handler="project.cobolSettings" id="sourceformat" name="SOURCEFORMAT&quot;variable&quot;"/>
+<x:directive handler="project.cobolSettings" id="charset" name="CHARSET&quot;ASCII&quot;"/>
+<x:directive handler="project.cobolSettings" id="jarFolder" name="dist"/>
+<x:directive handler="project.cobolSettings" id="anim" name="anim"/>
+<x:directive handler="project.cobolSettings" id="dialect" name="DIALECT&quot;MF&quot;"/>
+<x:directive handler="project.cobolSettings" id="packageToFolderMapping" name="packageToFolderMapping"/>
+</x:dirset>

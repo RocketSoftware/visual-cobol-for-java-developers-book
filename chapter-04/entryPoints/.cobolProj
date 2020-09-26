@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cobolProject" name="entryPoints" uuid="d2e07c7c-b8b1-4d78-8bd4-91ddf371811c" version="5.0">
+   <settings xsi:type="projectSettingsContainer">
+      <build-precedence-paths xsi:type="buildPrecedenceSettings">
+         <path enabled="true" name="/entryPoints/src" type="mfpath"/>
+      </build-precedence-paths>
+      <dependent-projects xsi:type="dependentProjectsSettings"/>
+      <copybook-paths xsi:type="copybookPathsSettings">
+         <path enabled="true" name="/entryPoints" type="mfpath"/>
+         <path enabled="true" name="/entryPoints/src" type="mfpath"/>
+         <path enabled="false" name="/entryPoints/src/entryPoints" type="mfpath"/>
+      </copybook-paths>
+      <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
+         <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
+            <targetdir name=".bin"/>
+         </configuration>
+      </configurations>
+      <extra-resource-files xsi:type="extraResourceFilesSettings"/>
+   </settings>
+   <files xsi:type="projectFileStore">
+      <filetype type="cobol" xsi:type="cobolFileContainer">
+         <file compile="true" path="src/entryPoints/MainProgram.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/entryPoints/Program2.cbl" xsi:type="cobolFile"/>
+      </filetype>
+      <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
+      <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="bin/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+      </folders>
+   </files>
+</project>
