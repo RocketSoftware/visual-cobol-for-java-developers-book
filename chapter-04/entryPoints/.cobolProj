@@ -24,9 +24,24 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
-         <folder compile="true" path="bin/entryPoints" xsi:type="cobolFolder"/>
-         <folder compile="true" path="src/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/generated-sources" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile/default-compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.examples/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/entryPoints/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src/entryPoints" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.examples" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

@@ -11,12 +11,11 @@
          <path enabled="false" name="/SalutationStore/src/com" type="mfpath"/>
          <path enabled="false" name="/SalutationStore/src/com/mfcobolbook" type="mfpath"/>
          <path enabled="false" name="/SalutationStore/src/com/mfcobolbook/examples" type="mfpath"/>
-         <path enabled="false" name="/SalutationStore/.externalToolBuilders" type="mfpath"/>
-         <path enabled="false" name="/SalutationStore/dist" type="mfpath"/>
+         <path enabled="false" name="/SalutationStore/target" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
-            <targetdir name="bin"/>
+            <targetdir name=".bin"/>
          </configuration>
       </configurations>
       <extra-resource-files xsi:type="extraResourceFilesSettings"/>
@@ -27,11 +26,30 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
-         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/SalutationStore/SalutationStore" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.examples" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.examples/SalutationStore" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile/default-compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/SalutationStore" xsi:type="cobolFolder"/>
          <folder compile="true" path="src/com/mfcobolbook/examples" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/mfcobolbook/examples" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/generated-sources" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook/examples" xsi:type="cobolFolder"/>
+         <folder compile="true" path=".externalToolBuilders" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/mfcobolbook/examples" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/SalutationStore" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

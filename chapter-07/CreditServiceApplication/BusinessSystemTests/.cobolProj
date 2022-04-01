@@ -11,8 +11,21 @@
          <path enabled="true" name="/BusinessSystemTests" type="mfpath"/>
          <path enabled="true" name="/BusinessSystemTests/src" type="mfpath"/>
          <path enabled="false" name="/BusinessSystemTests/testData" type="mfpath"/>
-         <path enabled="false" name="/BusinessSystemTests/dist" type="mfpath"/>
          <path enabled="true" name="/BusinessRules" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/test-classes" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-sources" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-sources/annotations" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/compile/default-compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/testCompile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-test-sources" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-test-sources/test-annotations" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/test-classes/reports" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/surefire-reports" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -32,9 +45,15 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
          <folder compile="true" path="Data" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/BusinessSystemTests" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
          <folder compile="true" path="src" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

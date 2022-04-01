@@ -4,6 +4,7 @@
 	<!--  ***********************************  -->
 	<!--  * General property initialisation *  -->
 	<!--  ***********************************  -->
+	<property name="mf.createCar" value="false"/>
 	<property name="pathVar.PROJECT_LOC" value="${basedir}"/>
 	<property name="pathVar.WORKSPACE_LOC" value="${env.WORKSPACE_LOC}"/>
 	<property name="pathVar.ECLIPSE_HOME" value="${env.ECLIPSE_HOME}"/>
@@ -21,6 +22,11 @@
 	<property name="mf.failOnError" value="false"/>
 	<property name="mf.cobolFailOnError" value="true"/>
 	<property name="mf.cobollinkFailOnError" value="${mf.failOnError}"/>
+	<property name="mf.entryPoint.cfg.New_Configuration" value=""/>
+	<property name="mf.destDir.cfg.New_Configuration" value="${basedir}/New_Configuration.bin"/>
+	<property name="mf.entryPoint.file" value=""/>
+	<property name="mf.sdkLocation" value="c:\Program Files (x86)\Windows Kits\10\Bin\10.0.17763.0\"/>
+	<property name="mf.buildToolsLocation" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\bin\Host"/>
 	<target name="printLocations">
 		<echo message="Project Location: &apos;pathVar.PROJECT_LOC&apos;=${pathVar.PROJECT_LOC}"/>
 		<echo message="Project Location: &apos;pathVar.WORKSPACE_LOC&apos;=${pathVar.WORKSPACE_LOC}"/>
@@ -31,6 +37,7 @@
 	<!--  ******************************  -->
 	<!--  * OS-specific initialisation *  -->
 	<!--  ******************************  -->
+	<property name="carext" value=".car"/>
 	<condition property="windows">
 		<os family="windows"/>
 	</condition>
@@ -102,11 +109,24 @@
 	<mffilelist id="cobol.default.object.files.New Configuration" srcdir="${basedir}/New_Configuration.bin" type="objfile">
 		<file name="MainProgram${mf.objext}"/>
 	</mffilelist>
+	<!--  ********************************  -->
+	<!--  * MFUnit entry point file list *  -->
+	<!--  ********************************  -->
+	<mffilelist type="linkfile" id="cobol.mfunit.entry.point.files">
+		<file name="${mf.entryPoint.file}"/>
+	</mffilelist>
+	<target name="cobol.createcar.cfg.New_Configuration.property">
+		<condition property="mf.createCar.isTrue">
+			<istrue value="${mf.createCar}"/>
+		</condition>
+	</target>
+	<target name="cobol.createcar.cfg.New_Configuration" depends="cobol.createcar.cfg.New_Configuration.property" if="mf.createCar.isTrue">
+	</target>
 	<!--  *************************  -->
 	<!--  * Configuration targets *  -->
 	<!--  *************************  -->
 	<!-- cfg.New_Configuration -->
-	<target name="cobolbuild.cfg.New_Configuration" depends="printLocations,pre.build.cfg.New_Configuration,nature.specific.build.cfg.New_Configuration,post.build.cfg.New_Configuration"/>
+	<target name="cobolbuild.cfg.New_Configuration" depends="printLocations,pre.build.cfg.New_Configuration,nature.specific.build.cfg.New_Configuration,post.build.cfg.New_Configuration,deploy.cfg.New_Configuration"/>
 	<target name="nature.specific.build.cfg.New_Configuration" depends="cobol.cfg.New_Configuration"/>
 	<target name="cobol.cfg.New_Configuration" depends="cobol.compile.cfg.New_Configuration,cobol.link.cfg.New_Configuration"/>
 	<target name="New_Configuration.FileCompile">
@@ -115,36 +135,25 @@
 		<property name="fileextn.pco" value="cobol"/>
 		<property name="fileextn.sqb" value="cobol"/>
 		<property name="fileextn.eco" value="cobol"/>
-		<ac:for list="${filesList}" param="filename" keepgoing="true" trim="true">
-			<sequential>
-				<ac:if>
-					<not>
-						<isset property="isCancelled"/>
-					</not>
-					<then>
-						<propertyregex input="@{filename}" regexp="((.*[\\/])*)([^\.]*)\..*" select="\3" property="basename" casesensitive="false" override="true"/>
-						<propertyregex input="@{filename}" regexp="((.*[\\/])*)([^\.]*)(\..*)" select="\4" property="filesuffix" casesensitive="false" override="true"/>
-						<script classpath="${java.home}/lib/ext/nashorn.jar" language="javascript">project.setProperty("lowerFileSuffix", project.getProperty("filesuffix").toLowerCase());</script>
-						<propertycopy name="targetSuffix" from="fileextn${lowerFileSuffix}" override="true"/>
-						<ac:if>
-							<equals arg2="lin" arg1="${targetSuffix}"/>
-							<then>
-								<ac:antcallback target="FileCompile.New_Configuration.${basename}${filesuffix}" inheritAll="true" return="isCancelled">
-									<param name="fileBaseName" value="${basename}"/>
-									<param name="fullFileName" value="@{filename}"/>
-								</ac:antcallback>
-							</then>
-							<else>
-								<ac:antcallback target="FileCompile.New_Configuration.${targetSuffix}" inheritAll="true" return="isCancelled">
-									<param name="fileBaseName" value="${basename}"/>
-									<param name="fullFileName" value="@{filename}"/>
-								</ac:antcallback>
-							</else>
-						</ac:if>
-					</then>
-				</ac:if>
-			</sequential>
-		</ac:for>
+		<property name="fileextn.bms" value="bms"/>
+		<property name="fileextn.mlc" value="asm"/>
+		<property name="fileextn.asm" value="asm"/>
+		<property name="fileextn.cap" value="asm"/>
+		<property name="fileextn.lin" value="lin"/>
+		<property name="fileextn.mac" value="macro"/>
+		<property name="fileextn.cpy" value="macro"/>
+		<property name="fileextn.jcl" value="jcl"/>
+		<property name="fileextn.vse" value="jcl"/>
+		<property name="fileextn.dbd" value="dbd"/>
+		<property name="fileextn.psb" value="psb"/>
+		<property name="fileextn.mfs" value="mfs"/>
+		<property name="fileextn.rex" value="rexx"/>
+		<property name="fileextn.rxf" value="rexx"/>
+		<property name="fileextn.tso" value="clist"/>
+		<property name="fileextn.ezt" value="easytrieve"/>
+		<property name="fileextn.pli" value="pli"/>
+		<property name="fileextn.pl1" value="pli"/>
+		<executefilecompile filesList="${filesList}"/>
 	</target>
 	<target name="cobol.compile.cfg.New_Configuration">
 		<cobol debug="true" configuration="New Configuration" analysisData="${analysisData}" threadCount="${mf.buildThreadCount}" settingsDir="${mf.settingsDir}" threadedRts="true" analysisDataDir="${analysisDataDir}" useDirectiveSet="${mf.useDirectiveSet}" destdir="${basedir}/New_Configuration.bin" is64bit="true" failonerror="${mf.cobolFailOnError}" forceCompile="${mf.forceCompile}" connectionName="${mf.connectionName}" projectName="${mf.projectName}" desttype="obj">
@@ -154,13 +163,16 @@
 		</cobol>
 	</target>
 	<target name="cobol.link.cfg.New_Configuration">
-		<cobollink debug="true" destfile="NativeCalculator" entrypoint="" sharedRts="true" destdir="${basedir}/New_Configuration.bin" is64bit="true" failonerror="${mf.cobollinkFailOnError}" desttype="dll/cso" threadedRts="true">
+		<cobollink debug="true" destfile="NativeCalculator" entrypoint="${mf.entryPoint.cfg.New_Configuration}" sharedRts="true" destdir="${mf.destDir.cfg.New_Configuration}" is64bit="true" failonerror="${mf.cobollinkFailOnError}" desttype="dll/cso" threadedRts="true">
 			<mffilelist refid="cobol.default.object.files.New Configuration"/>
+			<mffilelist refid="cobol.mfunit.entry.point.files"/>
 		</cobollink>
 	</target>
 	<target name="pre.build.cfg.New_Configuration">
 	</target>
-	<target name="post.build.cfg.New_Configuration">
+	<target name="post.build.cfg.New_Configuration" depends="cobol.createcar.cfg.New_Configuration">
+	</target>
+	<target name="deploy.cfg.New_Configuration">
 	</target>
 	<target name="clean.cfg.New_Configuration">
 		<cobolclean debug="true" destdir="${basedir}/New_Configuration.bin" desttype="dll">
@@ -180,6 +192,9 @@
 	</target>
 	<target name="compileSource">
 		<antcall target="${mf.cfg}.FileCompile" inheritAll="true"/>
+	</target>
+	<target name="cobollink">
+		<antcall target="cobol.link.${mf.cfgtarget}" inheritAll="true"/>
 	</target>
 	<target name="compile" depends="compileSource">
 	</target>

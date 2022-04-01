@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mfcobolbook.cobol</groupId>
+	<artifactId>NativeCalculatorTest</artifactId>
+	<version>1.0.7</version>
+
+	<properties>
+		<!-- Windows -->
+		<mfurun.executable>mfurun</mfurun.executable>
+		<!-- For Linux you can use: <mfurun.executable>cobmfurun64</mfurun.executable> -->
+		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<test.project.output.dir>${project.basedir}/New_Configuration.bin</test.project.output.dir>
+		<!-- Windows: -->
+		<test.project.output.artifact>NativeCalculatorTest.dll</test.project.output.artifact>
+		<!-- Linux:  
+		<test.project.output.artifact>NativeCalculatorTest.so</test.project.output.artifact>
+		-->
+		<project.under.test.output.dir>${project.basedir}/../NativeCalculator/New_Configuration.bin</project.under.test.output.dir>
+		<test.results.dir>${project.basedir}/test-results</test.results.dir>
+		<test.results.junit.package>native.calculator.testcases</test.results.junit.package>
+	</properties>
+
+	<build>
+		<directory>${test.project.output.dir}</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>build</id>
+						<phase>compile</phase>
+						<configuration>
+							<target>
+								<ant antfile="${project.basedir}/.cobolBuild"
+									target="cobolbuild" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>test</id>
+						<phase>test</phase>
+						<configuration>
+							<target>
+								<!-- Generate mfu -->
+								<exec dir="${test.project.output.dir}" executable="${mfurun.executable}">
+									<arg value="-generate-mfu ${test.project.output.artifact}"/>
+								</exec>
+								<!-- Run the tests -->
+								<taskdef name="mfurun"
+									classname="com.microfocus.mfunit.ant.MFURunMFUTask" />
+								<mfurun printsummary="true" junitresults="true"
+									junitreportpackage="${test.results.junit.package}"
+									outputdir="${test.results.dir}">
+									<fileset dir="${test.project.output.dir}"
+										includes="*.mfu" />
+									<env key="COBPATH" value="${project.under.test.output.dir}" />
+								</mfurun>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>clean</id>
+						<phase>clean</phase>
+						<configuration>
+							<target>
+								<ant antfile="${project.basedir}/.cobolBuild" target="clean" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+							<exclusion>
+								<groupId>ant</groupId>
+								<artifactId>ant</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<!-- 
+					COBOL Build System and MFUnit dependencies can be installed with:
+					Windows:
+						set COBDIR=C:\Program Files (x86)\Micro Focus\Visual COBOL
+						set COBOL_VERSION=7.0.0
+						mvn install:install-file -Dfile="%COBDIR%\bin\mfant.jar" -DgroupId=com.microfocus.cobol.build -DartifactId=mfant -Dversion=%COBOL_VERSION% -Dpackaging=jar
+						mvn install:install-file -Dfile="%COBDIR%\bin\mfunit.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfunit -Dversion=%COBOL_VERSION% -Dpackaging=jar
+					Linux:
+						source /opt/microfocus/VisualCOBOL/bin/cobsetenv
+						export COBOL_VERSION=7.0.0
+						mvn install:install-file -Dfile="$COBDIR/lib/mfant.jar" -DgroupId=com.microfocus.cobol.build -DartifactId=mfant -Dversion=$COBOL_VERSION -Dpackaging=jar
+						mvn install:install-file -Dfile="$COBDIR/lib/mfunit.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfunit -Dversion=$COBOL_VERSION -Dpackaging=jar
+					-->
+					<dependency>
+						<groupId>com.microfocus.cobol.build</groupId>
+						<artifactId>mfant</artifactId>
+						<version>7.0.0</version>
+					</dependency>
+					<dependency>
+						<groupId>com.microfocus.cobol.rts</groupId>
+						<artifactId>mfunit</artifactId>
+						<version>7.0.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

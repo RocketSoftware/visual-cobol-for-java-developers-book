@@ -6,12 +6,8 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>com.microfocus.eclipse.project.cobolBuilder</name>
+			<name>com.microfocus.eclipse.coboljvm.cobolJvmBuilder</name>
 			<arguments>
-				<dictionary>
-					<key>buildThreadCount</key>
-					<value>1</value>
-				</dictionary>
 				<dictionary>
 					<key>mf.buildThreadCount</key>
 					<value>1</value>
@@ -27,21 +23,13 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
-			<triggers>auto,full,incremental,</triggers>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
-				<dictionary>
-					<key>LaunchConfigHandle</key>
-					<value>&lt;project&gt;/.externalToolBuilders/mvn_businessrules.launch</value>
-				</dictionary>
-				<dictionary>
-					<key>incclean</key>
-					<value>true</value>
-				</dictionary>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>com.microfocus.eclipse.project.cobolNature</nature>
 		<nature>com.microfocus.eclipse.coboljvm.coboljvmNature</nature>

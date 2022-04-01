@@ -13,10 +13,16 @@
          <path enabled="false" name="/DataBuilder/src/com" type="mfpath"/>
          <path enabled="false" name="/DataBuilder/src/com/mfcobolbook" type="mfpath"/>
          <path enabled="false" name="/DataBuilder/src/com/mfcobolbook/databuilder" type="mfpath"/>
-         <path enabled="false" name="/DataBuilder/.externalToolBuilders" type="mfpath"/>
-         <path enabled="false" name="/DataBuilder/dist" type="mfpath"/>
          <path enabled="true" name="/BusinessRules" type="mfpath"/>
          <path enabled="false" name="/DataBuilder/csvData" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/test-classes" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/maven-status" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/maven-status/maven-compiler-plugin" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/maven-status/maven-compiler-plugin/compile" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/maven-status/maven-compiler-plugin/compile/default-compile" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/target/maven-archiver" type="mfpath"/>
+         <path enabled="false" name="/DataBuilder/Data" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -39,11 +45,21 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="bin/com/mfcobolbook/databuilder" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook/databuilder" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/DataBuilder" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/mfcobolbook/databuilder" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
          <folder compile="true" path="src/com/mfcobolbook/databuilder" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
+         <folder compile="true" path=".externalToolBuilders" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

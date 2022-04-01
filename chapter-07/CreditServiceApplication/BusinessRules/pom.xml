@@ -2,29 +2,59 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<properties>
-		<cobolVersion>5.0.0</cobolVersion>
-	</properties>
 	<groupId>com.mfcobolbook.cobol</groupId>
+	<artifactId>BusinessRules</artifactId>
 	<version>1.0.7</version>
-	<packaging>jar</packaging>
-
 	<name>BusinessRules</name>
 	<description>Business rules and data</description>
 	
-    <dependencies>
-        <dependency>
-            <groupId>com.microfocus.cobol.rts</groupId>
-            <artifactId>mfcobol</artifactId>
-			<version>${cobolVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.microfocus.cobol.rts</groupId>
-            <artifactId>mfcobolrts</artifactId>
-			<version>${cobolVersion}</version>
-        </dependency>
-    </dependencies>
+	<properties>
+		<!-- product.install.dir could be updated with ${env.COBDIR}, if COBIR is set and contains single location -->
+		<product.install.dir>C:\Program Files (x86)\Micro Focus\Visual COBOL</product.install.dir>
+		<!-- For Linux you can use:
+		<product.install.dir>/opt/microfocus/VisualCOBOL</product.install.dir> -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
 
-	<artifactId>BusinessRules</artifactId>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>microfocus-repo</id>
+			<name>Micro Focus Repository</name>
+			<url>file://${product.install.dir}/etc/m2repo</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<!-- Micro Focus Maven Plugin -->
+			<plugin>
+				<groupId>com.microfocus.maven</groupId>
+				<artifactId>microfocus-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>cobolDependencies</goal> <!-- in validate phase -->
+							<goal>cobolCompile</goal> <!-- in compile phase -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Packaging exclude unnecessary files -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*.tlog</exclude>
+						<exclude>**/*.idy</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

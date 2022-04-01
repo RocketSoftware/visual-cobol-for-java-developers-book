@@ -6,7 +6,7 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>com.microfocus.eclipse.project.cobolBuilder</name>
+			<name>com.microfocus.eclipse.coboljvm.cobolJvmBuilder</name>
 			<arguments>
 				<dictionary>
 					<key>mf.buildThreadCount</key>
@@ -22,8 +22,14 @@
 				</dictionary>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>com.microfocus.eclipse.project.cobolNature</nature>
 		<nature>com.microfocus.eclipse.coboljvm.coboljvmNature</nature>

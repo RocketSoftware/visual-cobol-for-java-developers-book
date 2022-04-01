@@ -1,54 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>com.mfcobolbook.creditservice</groupId>
-    <artifactId>CreditService</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>CreditService</name>
-    <description>REST Service for Credit card operations</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.9.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.mfcobolbook.java</groupId>
+	<artifactId>CreditService</artifactId>
+	<version>1.0.6</version>
+	<name>CreditService</name>
+	<description>REST Service for Credit card operations</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <appVersion>1.0.6</appVersion>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<cobolRtsVersion>7.0.0</cobolRtsVersion>
+		<appVersion>1.0.6</appVersion>
+	</properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.mfcobolbook.cobol</groupId>
-            <artifactId>BusinessInterop</artifactId>
-            <version>${appVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <scope>test</scope>
-        </dependency>
-        
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mfcobolbook.cobol</groupId>
+			<artifactId>BusinessInterop</artifactId>
+			<version>${appVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mfcobolbook.cobol</groupId>
+			<artifactId>BusinessRules</artifactId>
+			<version>${appVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 
+		COBOL RTS dependencies can be installed with:
+		Windows:
+			set COBDIR=C:\Program Files (x86)\Micro Focus\Visual COBOL
+			set COBOL_VERSION=7.0.0
+			mvn install:install-file -Dfile="%COBDIR%\bin\mfcobolrts.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfcobolrts -Dversion=%COBOL_VERSION% -Dpackaging=jar
+			mvn install:install-file -Dfile="%COBDIR%\bin\mfcobol.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfcobol -Dversion=%COBOL_VERSION% -Dpackaging=jar
+			mvn install:install-file -Dfile="%COBDIR%\bin\mfsqljvm.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfsqljvm -Dversion=%COBOL_VERSION% -Dpackaging=jar
+		Linux:
+			source /opt/microfocus/VisualCOBOL/bin/cobsetenv
+			export COBOL_VERSION=7.0.0
+			mvn install:install-file -Dfile="$COBDIR/lib/mfcobolrts.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfcobolrts -Dversion=$COBOL_VERSION -Dpackaging=jar
+			mvn install:install-file -Dfile="$COBDIR/lib/mfcobol.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfcobol -Dversion=$COBOL_VERSION -Dpackaging=jar
+			mvn install:install-file -Dfile="$COBDIR/lib/mfsqljvm.jar" -DgroupId=com.microfocus.cobol.rts -DartifactId=mfsqljvm -Dversion=$COBOL_VERSION -Dpackaging=jar
+		-->
+		<dependency>
+			<groupId>com.microfocus.cobol.rts</groupId>
+			<artifactId>mfcobolrts</artifactId>
+			<version>${cobolRtsVersion}</version>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<environmentVariables>
+						<dd_accountFile>${project.basedir}\testData\account.dat</dd_accountFile>
+						<dd_customerFile>${project.basedir}\testData\customer.dat</dd_customerFile>
+						<dd_transactionFile>${project.basedir}\testData\transaction.dat</dd_transactionFile>
+					</environmentVariables>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

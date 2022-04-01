@@ -1,3 +1,22 @@
+      *****************************************************************
+      *                                                               *
+      * Copyright (C) 2020-2022 Micro Focus.  All Rights Reserved.    *
+      * This software may be used, modified, and distributed          *
+      * (provided this notice is included without modification)       *
+      * solely for demonstration purposes with other                  *
+      * Micro Focus software, and is otherwise subject to the EULA at *
+      * https://www.microfocus.com/en-us/legal/software-licensing.    *
+      *                                                               *
+      * THIS SOFTWARE IS PROVIDED "AS IS" AND ALL IMPLIED           *
+      * WARRANTIES, INCLUDING THE IMPLIED WARRANTIES OF               *
+      * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE,         *
+      * SHALL NOT APPLY.                                              *
+      * TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL              *
+      * MICRO FOCUS HAVE ANY LIABILITY WHATSOEVER IN CONNECTION       *
+      * WITH THIS SOFTWARE.                                           *
+      *                                                               *
+      *****************************************************************
+      
       $set ilusing(java.math) ilusing(java.io)
        class-id com.mfcobolbook.database.DatabaseInitializerWrapper public.
        copy "DataMigrationEntryPoints.cpy".
@@ -137,7 +156,7 @@
                display pg-user space with no advancing
            end-if
            display POSTGRES-PASSWORD space with no advancing
-           if pg-host = null
+           if pg-password = null
                set no-connection-string = true
                display "NOT SET
            else
@@ -150,7 +169,7 @@
            declare connection-string = type String::format(template, pg-host, pg-db, pg-user, pg-password)
            move connection-string to connection-string-arg
            call "DatabaseInitializer" using by reference connection-string-arg
-           call "ACCOUNT-STORAGE-ACCESS" 
+           call "AccountStorageAccess" 
            call SET-DB-CONNECTION-STRING using by reference connection-string-arg
        end method.
 
