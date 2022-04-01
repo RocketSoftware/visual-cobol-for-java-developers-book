@@ -30,8 +30,6 @@ import java.nio.file.StandardCopyOption;
 
 import org.springframework.boot.SpringApplication;
 
-import com.mfcobolbook.creditservice.webservice.WebserviceApplication;
-
 import io.restassured.RestAssured;
 
 public abstract class WebserviceApplicationTests {
