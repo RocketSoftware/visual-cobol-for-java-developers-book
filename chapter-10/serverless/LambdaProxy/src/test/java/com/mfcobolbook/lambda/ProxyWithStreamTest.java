@@ -1,3 +1,22 @@
+/*****************************************************************
+ *                                                               *
+ * Copyright (C) 2020-2022 Micro Focus. All Rights Reserved.     *
+ * This software may be used, modified, and distributed          *
+ * (provided this notice is included without modification)       *
+ * solely for demonstration purposes with other                  *
+ * Micro Focus software, and is otherwise subject to the EULA at *
+ * https://www.microfocus.com/en-us/legal/software-licensing.    *
+ *                                                               *
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND ALL IMPLIED             *
+ * WARRANTIES, INCLUDING THE IMPLIED WARRANTIES OF               *
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE,         *
+ * SHALL NOT APPLY.                                              *
+ * TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL              *
+ * MICRO FOCUS HAVE ANY LIABILITY WHATSOEVER IN CONNECTION       *
+ * WITH THIS SOFTWARE.                                           *
+ *                                                               *
+ *****************************************************************/
+ 
 package com.mfcobolbook.lambda;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,11 +30,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.google.gson.Gson;

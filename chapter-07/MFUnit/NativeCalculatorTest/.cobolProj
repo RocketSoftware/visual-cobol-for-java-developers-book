@@ -14,16 +14,24 @@
             <link_settings xsi:type="linkSettings">
                <options>
                   <option id="targetName" name="linkSettings" value="NativeCalculatorTest"/>
-                  <option id="platform" name="linkSettings" value="Windows"/>
-                  <option id="threadedRts" name="linkSettings" value="threadedRts"/>
                   <option id="applicationType" name="linkSettings" value="console"/>
-                  <option id="runtimeModel" name="linkSettings" value="shared"/>
                   <option id="outputDirectory" name="linkSettings" value="New Configuration.bin"/>
                   <option id="type" name="linkSettings" value="single_dll"/>
+                  <option id="platform" name="linkSettings" value="Windows"/>
+                  <option id="threadedRts" name="linkSettings" value="threadedRts"/>
+                  <option id="runtimeModel" name="linkSettings" value="shared"/>
                   <option id="bitism" name="linkSettings" value="64 bit"/>
                </options>
                <additional_files/>
             </link_settings>
+            <deploy_settings xsi:type="deploySettings">
+               <options>
+                  <option id="deployFolder" name="deploySettings" value="deploy"/>
+                  <option id="cleanAllowed" name="deploySettings" value="cleanAllowed"/>
+                  <option id="deployFiles" name="deploySettings" value=""/>
+                  <option id="deployPatterns" name="deploySettings" value="New_Configuration.bin/*${exeext}"/>
+               </options>
+            </deploy_settings>
          </configuration>
       </configurations>
       <ims_settings xsi:type="additionalImsSettings">
@@ -35,14 +43,14 @@
       </dependent-projects>
       <asm_link_settings xsi:type="assemblerLinkSettings">
          <options>
-            <option id="link_residency_mode" name="mf370lnk" value="RMODE(31)"/>
-            <option id="link_linker_output" name="mf370lnk" value="OMF(390)"/>
-            <option id="link_resolve_external" name="mf370lnk" value="CALL"/>
-            <option id="link_mark_reusable" name="mf370lnk" value="REUS"/>
-            <option id="link_generate_listing" name="mf370lnk" value="NOLIST"/>
             <option id="link_create_debug_info" name="mf370lnk" value="ANIM"/>
             <option id="link_mark_reentrant" name="mf370lnk" value="RENT"/>
+            <option id="link_residency_mode" name="mf370lnk" value="RMODE(31)"/>
             <option id="link_addressing_mode" name="mf370lnk" value="AMODE(31)"/>
+            <option id="link_generate_listing" name="mf370lnk" value="NOLIST"/>
+            <option id="link_linker_output" name="mf370lnk" value="OMF(390)"/>
+            <option id="link_mark_reusable" name="mf370lnk" value="REUS"/>
+            <option id="link_resolve_external" name="mf370lnk" value="CALL"/>
          </options>
       </asm_link_settings>
    </settings>

@@ -13,9 +13,7 @@
          <path enabled="false" name="/BusinessInterop/src/com" type="mfpath"/>
          <path enabled="false" name="/BusinessInterop/src/com/mfcobolbook" type="mfpath"/>
          <path enabled="false" name="/BusinessInterop/src/com/mfcobolbook/businessinterop" type="mfpath"/>
-         <path enabled="false" name="/BusinessInterop/.externalToolBuilders" type="mfpath"/>
          <path enabled="true" name="/BusinessRules-oesql" type="mfpath"/>
-         <path enabled="false" name="/BusinessInterop/dist" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -44,18 +42,38 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com/mfcobolbook" xsi:type="cobolFolder"/>
-         <folder compile="true" path="src/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
          <folder compile="true" path="dist" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile/default-compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/BusinessInterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com/mfcobolbook/businessinterop" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

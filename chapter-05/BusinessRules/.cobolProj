@@ -8,8 +8,16 @@
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/BusinessRules" type="mfpath"/>
          <path enabled="true" name="/BusinessRules/src" type="mfpath"/>
-         <path enabled="false" name="/BusinessRules/.externalToolBuilders" type="mfpath"/>
-         <path enabled="false" name="/BusinessRules/dist" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/maven-archiver" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/maven-status" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/maven-status/maven-compiler-plugin" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/maven-status/maven-compiler-plugin/compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/maven-status/maven-compiler-plugin/compile/default-compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/target/test-classes" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/src/com" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/src/com/mfcobolbook" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules/src/com/mfcobolbook/businessrules" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -20,17 +28,35 @@
    </settings>
    <files xsi:type="projectFileStore">
       <filetype type="cobol" xsi:type="cobolFileContainer">
-         <file compile="true" path="src/Calendar.cbl" xsi:type="cobolFile"/>
-         <file compile="true" path="src/AccountStorageAccess.cbl" xsi:type="cobolFile"/>
-         <file compile="true" path="src/InterestCalculator.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/com/mfcobolbook/businessrules/AccountStorageAccess.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/com/mfcobolbook/businessrules/Calendar.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/com/mfcobolbook/businessrules/InterestCalculator.cbl" xsi:type="cobolFile"/>
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook/businessrules" xsi:type="cobolFolder"/>
-         <folder compile="true" path="src" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile/default-compile" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.businessrules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src/com/mfcobolbook/businessrules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook/businessrules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.businessrules/BusinessRules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/BusinessRules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

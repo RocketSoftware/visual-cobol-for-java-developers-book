@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mfcobolbook.cobol</groupId>
+	<artifactId>NativeCalculator</artifactId>
+	<version>1.0.7</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.output.dir>${project.basedir}/New_Configuration.bin</project.output.dir>
+	</properties>
+
+	<build>
+		<directory>${project.output.dir}</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>build</id>
+						<phase>compile</phase>
+						<configuration>
+							<target>
+								<ant antfile="${project.basedir}/.cobolBuild" target="cobolbuild" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>clean</id>
+						<phase>clean</phase>
+						<configuration>
+							<target>
+								<ant antfile="${project.basedir}/.cobolBuild" target="clean" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+							<exclusion>
+								<groupId>ant</groupId>
+								<artifactId>ant</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<!-- 
+					COBOL Build System dependencies can be installed with:
+					Windows:
+						set COBDIR=C:\Program Files (x86)\Micro Focus\Visual COBOL
+						set COBOL_VERSION=7.0.0
+						mvn install:install-file -Dfile="%COBDIR%\bin\mfant.jar" -DgroupId=com.microfocus.cobol.build -DartifactId=mfant -Dversion=%COBOL_VERSION% -Dpackaging=jar
+					Linux:
+						source /opt/microfocus/VisualCOBOL/bin/cobsetenv
+						export COBOL_VERSION=7.0.0
+						mvn install:install-file -Dfile="$COBDIR/lib/mfant.jar" -DgroupId=com.microfocus.cobol.build -DartifactId=mfant -Dversion=$COBOL_VERSION -Dpackaging=jar
+					-->
+					<dependency>
+						<groupId>com.microfocus.cobol.build</groupId>
+						<artifactId>mfant</artifactId>
+						<version>7.0.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

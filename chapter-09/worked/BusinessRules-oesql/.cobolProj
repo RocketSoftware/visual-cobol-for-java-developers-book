@@ -8,7 +8,7 @@
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/BusinessRules-oesql" type="mfpath"/>
          <path enabled="true" name="/BusinessRules-oesql/src" type="mfpath"/>
-         <path enabled="false" name="/BusinessRules-oesql/.externalToolBuilders" type="mfpath"/>
+         <path enabled="false" name="/BusinessRules-oesql/lib" type="mfpath"/>
          <path enabled="false" name="/BusinessRules-oesql/dist" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
@@ -26,16 +26,31 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
-         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
-         <folder compile="true" path="lib" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
          <folder compile="true" path="src" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
-         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/BusinessRules" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/microfocus" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

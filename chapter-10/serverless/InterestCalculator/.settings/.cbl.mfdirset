@@ -11,7 +11,4 @@
 <x:directive handler="project.cobolSettings" id="jarFolder" name="dist"/>
 <x:directive handler="project.cobolSettings" id="anim" name="anim"/>
 <x:directive handler="project.cobolSettings" id="dialect" name="DIALECT&quot;MF&quot;"/>
-<x:ecm enabled="true" handler="OpenESQL" id="project.sqlSettings" postfix=")" prefix="SQL(">
-<x:directive handler="OpenESQL" id="OESQL.dbman" name="DBMAN=JDBC"/>
-</x:ecm>
 </x:dirset>

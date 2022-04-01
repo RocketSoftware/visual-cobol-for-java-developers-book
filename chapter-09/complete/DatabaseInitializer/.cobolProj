@@ -10,11 +10,10 @@
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/DatabaseInitializer" type="mfpath"/>
          <path enabled="false" name="/DatabaseInitializer/dist" type="mfpath"/>
-         <path enabled="false" name="/DatabaseInitializer/.externalToolBuilders" type="mfpath"/>
          <path enabled="false" name="/DatabaseInitializer/src" type="mfpath"/>
          <path enabled="false" name="/DatabaseInitializer/src/com" type="mfpath"/>
          <path enabled="false" name="/DatabaseInitializer/src/com/mfcobolbook" type="mfpath"/>
-         <path enabled="false" name="/DatabaseInitializer/src/com/mfcobolbook/database" type="mfpath"/>
+         <path enabled="true" name="/DatabaseInitializer/src/com/mfcobolbook/database" type="mfpath"/>
          <path enabled="true" name="/BusinessRules-oesql" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
@@ -26,10 +25,10 @@
    </settings>
    <files xsi:type="projectFileStore">
       <filetype type="cobol" xsi:type="cobolFileContainer">
-         <file compile="true" path="src/com/mfcobolbook/database/DatabaseInitializer.cbl" xsi:type="cobolFile"/>
          <file compile="true" path="src/com/mfcobolbook/database/DatabaseInitializerWrapper.cbl" xsi:type="cobolFile"/>
          <file compile="true" path="src/com/mfcobolbook/database/MainProgram.cbl" xsi:type="cobolFile"/>
          <file compile="true" path="src/com/mfcobolbook/database/CsvReader.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="src/DatabaseInitializer.cbl" xsi:type="cobolFile"/>
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
@@ -38,10 +37,9 @@
          <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="src/com/mfcobolbook/database" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/java/lang" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/java" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/mfcobolbook/database" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>

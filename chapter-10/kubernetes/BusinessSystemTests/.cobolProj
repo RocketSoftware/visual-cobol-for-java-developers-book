@@ -11,9 +11,20 @@
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/BusinessSystemTests" type="mfpath"/>
          <path enabled="true" name="/BusinessSystemTests/src" type="mfpath"/>
-         <path enabled="false" name="/BusinessSystemTests/dist" type="mfpath"/>
          <path enabled="true" name="/BusinessRules-oesql" type="mfpath"/>
          <path enabled="true" name="/DatabaseInitializer" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-sources" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/generated-sources/annotations" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-archiver" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/compile/default-compile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/test-classes" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/testCompile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile" type="mfpath"/>
+         <path enabled="false" name="/BusinessSystemTests/target/test-classes/reports" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -21,6 +32,16 @@
          </configuration>
       </configurations>
       <extra-resource-files xsi:type="extraResourceFilesSettings"/>
+      <container xsi:type="containerSettings">
+         <baseStage value="base"/>
+         <buildArguments value="--build-arg DEPLOYBASE=microfocus/edbuildtools-build"/>
+         <context value="&lt;project>"/>
+         <dockerfile value="Dockerfile"/>
+         <mappings>
+            <mapping bareMetal="&lt;project>/New_Configuration.bin" container="C:/App"/>
+         </mappings>
+         <runArguments value=""/>
+      </container>
    </settings>
    <files xsi:type="projectFileStore">
       <filetype type="cobol" xsi:type="cobolFileContainer">
@@ -30,19 +51,34 @@
          <file compile="true" path="src/TestCustomerStorage.cbl" xsi:type="cobolFile"/>
          <file compile="true" path="src/TestTransactionStorage.cbl" xsi:type="cobolFile"/>
          <file compile="true" path="src/TestInterestCalculator.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/Helper-Functions.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/TestAccountStorage.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/TestCalendar.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/TestCustomerStorage.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/TestInterestCalculator.cbl" xsi:type="cobolFile"/>
+         <file compile="true" path="target/classes/TestTransactionStorage.cbl" xsi:type="cobolFile"/>
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
+         <folder compile="true" path="target/classes/META-INF/maven/BusinessSystemTests/BusinessSystemTests" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
-         <folder compile="true" path="Data" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
          <folder compile="true" path="src" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="Data" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/BusinessSystemTests" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/BusinessSystemTests" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus/openesql" xsi:type="cobolFolder"/>
+         <folder compile="true" path="lib" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>

@@ -1,3 +1,22 @@
+      *****************************************************************
+      *                                                               *
+      * Copyright (C) 2020-2022 Micro Focus.  All Rights Reserved.    *
+      * This software may be used, modified, and distributed          *
+      * (provided this notice is included without modification)       *
+      * solely for demonstration purposes with other                  *
+      * Micro Focus software, and is otherwise subject to the EULA at *
+      * https://www.microfocus.com/en-us/legal/software-licensing.    *
+      *                                                               *
+      * THIS SOFTWARE IS PROVIDED "AS IS" AND ALL IMPLIED           *
+      * WARRANTIES, INCLUDING THE IMPLIED WARRANTIES OF               *
+      * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE,         *
+      * SHALL NOT APPLY.                                              *
+      * TO THE EXTENT PERMITTED BY LAW, IN NO EVENT WILL              *
+      * MICRO FOCUS HAVE ANY LIABILITY WHATSOEVER IN CONNECTION       *
+      * WITH THIS SOFTWARE.                                           *
+      *                                                               *
+      *****************************************************************
+      
        copy "mfunit_prototypes.cpy".
        copy "cblproto.cpy".
        program-id. Helper-Functions.
@@ -6,6 +25,21 @@
        working-storage section.
        copy "PROCEDURE-NAMES.cpy".
        copy "FUNCTION-CODES.cpy".
+
+       78 POSTGRES-HOST value "POSTGRES_HOST".
+       78 POSTGRES-DB value "POSTGRES_DB".
+       78 POSTGRES-USER value "POSTGRES_USER".
+       78 POSTGRES-PASSWORD value "POSTGRES_PASSWORD".
+       01 pg-host pic x(20). 
+       01 pg-db pic x(20).
+       01 pg-user pic x(20).
+       01 pg-password pic x(20).
+       01 connection-string pic x(300) value spaces.
+       01 FILLER pic x.
+         88 NO-HOST value 'Y', false 'N'.
+         88 NO-DB value 'Y', false 'N'.
+         88 NO-USER value 'Y', false 'N'.
+         88 NO-PASSWORD value 'Y', false 'N'.
               
        01 VERIFICATION-RECORD PIC X(200).
        01 file-status.
@@ -35,7 +69,7 @@
        01 LNK-EXPECTED-RECORD                  pic x(200).
        01 LNK-FUNCTION-CODE                    pic x. 
        procedure division.
-           call "ACCOUNT-STORAGE-ACCESS"
+           call "AccountStorageAccess"
            goback
            .
 
@@ -90,7 +124,58 @@
                call CBL-DELETE-FILE using ws-filename
            end-if
       $else
-           call DATABASE-INITIALIZER
+           display POSTGRES-HOST upon environment-name 
+           accept PG-HOST from environment-value
+           display POSTGRES-DB upon environment-name 
+           accept pg-db from environment-value
+           display POSTGRES-USER upon environment-name 
+           accept pg-user from environment-value
+           display POSTGRES-PASSWORD upon environment-name 
+           accept pg-password from environment-value
+           
+           display POSTGRES-HOST space with no advancing
+           if pg-host = spaces
+               set NO-HOST to true
+               display "NOT SET" space with no advancing
+           else
+               display pg-host space with no advancing
+           end-if
+           display POSTGRES-DB space with no advancing
+           if pg-db = spaces
+               set NO-DB to true
+               display "NOT SET" space with no advancing
+           else
+               display pg-db space with no advancing
+           end-if
+           display POSTGRES-USER space with no advancing
+           if pg-user = spaces
+               set NO-USER to true
+               display "NOT SET" space with no advancing
+           else
+               display pg-user space with no advancing
+           end-if
+           display POSTGRES-PASSWORD space with no advancing
+           if pg-password = spaces
+               set NO-PASSWORD to true
+               display "NOT SET"
+           else
+               display "****"
+           end-if
+           if NO-HOST or NO-DB or NO-USER or NO-PASSWORD
+               goback
+           end-if
+
+           string "Driver=org.postgresql.Driver;URL=jdbc:postgresql://"
+             pg-host delimited by space
+             "/"
+             pg-db delimited by space
+             "?user="
+             pg-user delimited by space
+             "&password="
+             pg-password delimited by space
+             into connection-string
+           
+           call DATABASE-INITIALIZER using by reference connection-string
            call CREATE-TABLES
       $end
            set succeeded to true

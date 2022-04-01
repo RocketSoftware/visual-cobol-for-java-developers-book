@@ -7,12 +7,17 @@
       <dependent-projects xsi:type="dependentProjectsSettings"/>
       <copybook-paths xsi:type="copybookPathsSettings">
          <path enabled="true" name="/CsvReader" type="mfpath"/>
-         <path enabled="false" name="/CsvReader/dist" type="mfpath"/>
-         <path enabled="false" name="/CsvReader/.externalToolBuilders" type="mfpath"/>
          <path enabled="false" name="/CsvReader/src" type="mfpath"/>
          <path enabled="false" name="/CsvReader/src/com" type="mfpath"/>
          <path enabled="false" name="/CsvReader/src/com/mfcobolbook" type="mfpath"/>
          <path enabled="false" name="/CsvReader/src/com/mfcobolbook/database" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/test-classes" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/maven-archiver" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/maven-status" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/maven-status/maven-compiler-plugin" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/maven-status/maven-compiler-plugin/compile" type="mfpath"/>
+         <path enabled="false" name="/CsvReader/target/maven-status/maven-compiler-plugin/compile/default-compile" type="mfpath"/>
       </copybook-paths>
       <configurations default="New Configuration" linkedWith="2017" xsi:type="buildConfigurationsContainer">
          <configuration description="New Configuration" type="jvm" xsi:type="cobolBuildConfiguration">
@@ -27,18 +32,32 @@
       </filetype>
       <filetype type="cobol.copybook" xsi:type="cobolFileContainer"/>
       <folders xsi:type="cobolFolderContainer">
-         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
-         <folder compile="true" path="src/com/mfcobolbook/database" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/mfcobolbook/database" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/java/lang" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/java" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile/default-compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin/compile" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/mfcobolbook/database" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-archiver" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status/maven-compiler-plugin" xsi:type="cobolFolder"/>
+         <folder compile="true" path="dist" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/maven-status" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="src/com/mfcobolbook/database" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven/com.mfcobolbook.cobol/CsvReader" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
+         <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/META-INF/maven" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus/cobol/references/com/microfocus" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/mfcobolbook" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol/references" xsi:type="cobolFolder"/>
+         <folder compile="true" path="target/classes/com/mfcobolbook/database" xsi:type="cobolFolder"/>
          <folder compile="true" path="bin/com/microfocus" xsi:type="cobolFolder"/>
-         <folder compile="true" path="bin/com/microfocus/cobol" xsi:type="cobolFolder"/>
       </folders>
    </files>
 </project>
