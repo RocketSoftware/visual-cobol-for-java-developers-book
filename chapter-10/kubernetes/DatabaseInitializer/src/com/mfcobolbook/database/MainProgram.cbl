@@ -1,6 +1,6 @@
       *****************************************************************
       *                                                               *
-      * Copyright (C) 2020-2022 Micro Focus.  All Rights Reserved.    *
+      * Copyright 2020-2023 Open Text. All Rights Reserved.           *
       * This software may be used, modified, and distributed          *
       * (provided this notice is included without modification)       *
       * solely for demonstration purposes with other                  *
