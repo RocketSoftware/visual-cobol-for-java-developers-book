@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Used to ensure JSON Arrays are safely wrapped. 
- * @author Micro Focus
+ * @author Rocket Software
  *
  * @param <T>
  */
