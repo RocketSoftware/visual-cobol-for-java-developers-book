@@ -17,8 +17,8 @@
 	
 	<pluginRepositories>
 		<pluginRepository>
-			<id>microfocus-repo</id>
-			<name>Micro Focus Repository</name>
+			<id>rocket-software-repo</id>
+			<name>Rocket Software Repository</name>
 			<url>file://${product.install.dir}/etc/m2repo</url>
 		</pluginRepository>
 	</pluginRepositories>
@@ -26,7 +26,7 @@
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
-			<!-- Micro Focus Maven Plugin -->
+			<!-- Rocket Software Maven Plugin -->
 			<plugin>
 				<groupId>com.microfocus.maven</groupId>
 				<artifactId>microfocus-maven-plugin</artifactId>
