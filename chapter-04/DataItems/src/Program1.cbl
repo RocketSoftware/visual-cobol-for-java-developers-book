@@ -5,9 +5,8 @@
       *                                                                *
       ******************************************************************
 
-      
        program-id. Program1. 
-      *> No DATA DIVISION header required in Micro Focus COBOL
+
        working-storage section. 
        01 anInteger               pic x(4) comp-5. 
        01 aDifferentInteger       pic x(4) comp-x. 
@@ -19,4 +18,4 @@
          move "Hello there" to aString
 
          display anInteger space aDifferentInteger space aString
-           stop run
+         stop run
